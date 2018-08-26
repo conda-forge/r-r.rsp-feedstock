@@ -1,4 +1,4 @@
-{% set version = '0.41.0' %}
+{% set version = "0.43.0" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/R.rsp_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/R.rsp/R.rsp_{{ version }}.tar.gz
-  sha256: 6c6c0490fa40af20068e96ced43f6de089d363cc710a4575abef15b915188406
+  sha256: cd3fa03990fb3c9b0a8b8ef324fa3838d73eafc57a44f099029d7a37033aa62b
 
 build:
   number: 0
