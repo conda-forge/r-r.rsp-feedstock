@@ -1,4 +1,4 @@
-{% set version = '0.41.0' %}
+{% set version = '0.43.0' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -10,36 +10,39 @@ package:
 source:
   fn: R.rsp_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/R.rsp_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/R.rsp/R.rsp_{{ version }}.tar.gz
-  sha256: 6c6c0490fa40af20068e96ced43f6de089d363cc710a4575abef15b915188406
+    - {{ cran_mirror }}/src/contrib/R.rsp_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/R.rsp/R.rsp_{{ version }}.tar.gz
+  sha256: cd3fa03990fb3c9b0a8b8ef324fa3838d73eafc57a44f099029d7a37033aa62b
 
 build:
+  merge_build_host: True  # [win]
   number: 0
-  skip: true  # [win32]
-
   rpaths:
     - lib/R/lib/
     - lib/
 
+# Suggests: tcltk, ascii (>= 2.1), markdown (>= 0.8), knitr (>= 1.9), R.devices (>= 2.15.1), base64enc (>= 0.1-2)
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
-    - r-r.cache >=0.12.0
+    - r-r.cache >=0.13.0
     - r-r.methodss3 >=1.7.1
-    - r-r.oo >=1.21.0
+    - r-r.oo >=1.22.0
     - r-r.utils
-
+    - r-digest >=0.6.13
   run:
     - r-base
-    - r-r.cache >=0.12.0
+    - r-r.cache >=0.13.0
     - r-r.methodss3 >=1.7.1
-    - r-r.oo >=1.21.0
+    - r-r.oo >=1.22.0
     - r-r.utils
+    - r-digest >=0.6.13
 
 test:
   commands:
-    - $R -e "library('R.rsp')"  # [not win]
+    - $R -e "library('R.rsp')"           # [not win]
     - "\"%R%\" -e \"library('R.rsp')\""  # [win]
 
 about:
@@ -62,6 +65,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - dpryan79
     - johanneskoester
     - bgruening
     - daler
