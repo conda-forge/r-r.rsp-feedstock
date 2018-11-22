@@ -24,8 +24,6 @@ build:
 
 # Suggests: tcltk, ascii (>= 2.1), markdown (>= 0.8), knitr (>= 1.9), R.devices (>= 2.15.1), base64enc (>= 0.1-2)
 requirements:
-  build:
-    - {{posix}}zip               # [win]
   host:
     - r-base
     - r-r.cache >=0.13.0
