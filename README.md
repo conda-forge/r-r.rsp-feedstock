@@ -14,9 +14,8 @@ Summary: The RSP markup language makes any text-based document come alive.  RSP 
 Current build status
 ====================
 
-[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-r.rsp-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-r.rsp-feedstock)
-[![OSX](https://img.shields.io/travis/conda-forge/r-r.rsp-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-r.rsp-feedstock)
-[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-r.rsp-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-r-rsp-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/r-r.rsp-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/r-r.rsp-feedstock)
 
 Current release info
 ====================
