@@ -1,4 +1,4 @@
-{% set version = '0.43.1' %}
+{% set version = "0.43.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/R.rsp_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/R.rsp/R.rsp_{{ version }}.tar.gz
-  sha256: d979113b4a0c6088600b9107f941311b966adddd7b7ab105fd4412d625ba0144
+  sha256: f291a78ce9955943e0ebad1291f729dc4d9a8091f04b83fc4b1526bcb6c71f89
 
 build:
   merge_build_host: True  # [win]
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
