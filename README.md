@@ -3,7 +3,7 @@ About r-r.rsp
 
 Home: https://github.com/HenrikBengtsson/R.rsp
 
-Package license: LGPL (>= 2.1)
+Package license: LGPL-2.1-or-later
 
 Feedstock license: BSD-3-Clause
 
