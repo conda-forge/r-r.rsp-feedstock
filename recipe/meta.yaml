@@ -1,4 +1,4 @@
-{% set version = "0.43.2" %}
+{% set version = "0.44.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/R.rsp_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/R.rsp/R.rsp_{{ version }}.tar.gz
-  sha256: f291a78ce9955943e0ebad1291f729dc4d9a8091f04b83fc4b1526bcb6c71f89
+  sha256: 8969075bdcabd43bad40eef6b82223e119426279fded041163fd41e55cee3a59
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -46,21 +46,12 @@ test:
 about:
   home: https://github.com/HenrikBengtsson/R.rsp
   license: LGPL (>= 2.1)
-  summary: The RSP markup language makes any text-based document come alive.  RSP provides a
-    powerful markup for controlling the content and output of LaTeX, HTML, Markdown,
-    AsciiDoc, Sweave and knitr documents (and more), e.g. 'Today's date is <%=Sys.Date()%>'.  Contrary
-    to many other literate programming languages, with RSP it is straightforward to
-    loop over mixtures of code and text sections, e.g. in month-by-month summaries.  RSP
-    has also several preprocessing directives for incorporating static and dynamic contents
-    of external files (local or online) among other things.  Functions rstring() and
-    rcat() make it easy to process RSP strings, rsource() sources an RSP file as it
-    was an R script, while rfile() compiles it (even online) into its final output format,
-    e.g. rfile('report.tex.rsp') generates 'report.pdf' and rfile('report.md.rsp') generates
-    'report.html'.  RSP is ideal for self-contained scientific reports and R package
-    vignettes.  It's easy to use - if you know how to write an R script, you'll be up
-    and running within minutes.
+  summary: The RSP markup language makes any text-based document come alive.  RSP provides a powerful markup for controlling the content and output of LaTeX, HTML, Markdown, AsciiDoc, Sweave and knitr documents (and more), e.g. 'Today's date is <%=Sys.Date()%>'.  Contrary to many other literate programming languages, with
+    RSP it is straightforward to loop over mixtures of code and text sections, e.g. in month-by-month summaries.  RSP has also several preprocessing directives for incorporating static and dynamic contents of external files (local or online) among other things.  Functions rstring() and rcat() make it easy to process RSP
+    strings, rsource() sources an RSP file as it was an R script, while rfile() compiles it (even online) into its final output format, e.g. rfile('report.tex.rsp') generates 'report.pdf' and rfile('report.md.rsp') generates 'report.html'.  RSP is ideal for self-contained scientific reports and R package vignettes.  It's
+    easy to use - if you know how to write an R script, you'll be up and running within minutes.
   license_family: LGPL
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/LGPL-2.1'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/LGPL-2.1
 
 extra:
   recipe-maintainers:
